@@ -120,5 +120,43 @@
         "passed": true
       }
     ]
+  },
+  {
+    "subject": "ds",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-09-19T20:56:15.008660",
+    "answers": [
+      {
+        "questionId": "q10",
+        "partId": null,
+        "code": "import numpy as np\r\n\r\n# Step 1: Read space-separated numbers\r\narr = np.array(list(map(int, input().split())))\r\n\r\n# Step 2: Print the size of the array\r\nprint(arr.size)\r\n",
+        "passed": true
+      },
+      {
+        "questionId": "q2",
+        "partId": null,
+        "code": "import numpy as np\r\n\r\n# Read n\r\nn = int(input())\r\n\r\n# Create array of ones\r\narr = np.ones(n)\r\n\r\n# Print result\r\nprint(arr)\r\n",
+        "passed": true
+      },
+      {
+        "questionId": "q1",
+        "partId": null,
+        "code": "import numpy as np\r\n\r\n# Read input line and split into integers\r\narr = np.array(list(map(int, input().split())))\r\n\r\n# Print the numpy array\r\nprint(arr)\r\n",
+        "passed": true
+      },
+      {
+        "questionId": "q3",
+        "partId": null,
+        "code": "import numpy as np\r\n\r\n# Read the array\r\nline = input().strip()\r\narr = np.array(list(map(int, line.split())))\r\n\r\n# Read the single number (handle empty input safely)\r\nnum_line = input().strip()\r\nif not num_line:   # if user just presses Enter\r\n    num = 0        # default to 0 (or you can raise an error)\r\nelse:\r\n    num = int(num_line)\r\n\r\n# Add the number\r\nresult = arr + num\r\n\r\n# Print in format: [7 12] (no commas, no padding)\r\nprint(\"[\" + \" \".join(map(str, result)) + \"]\")\r\n",
+        "passed": true
+      },
+      {
+        "questionId": "q4",
+        "partId": null,
+        "code": "import numpy as np\r\n\r\n# Read input and create numpy array\r\narr = np.array(list(map(int, input().split())))\r\n\r\n# Print number of elements\r\nprint(arr.size)\r\n",
+        "passed": true
+      }
+    ]
   }
 ]

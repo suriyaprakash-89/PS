@@ -5,7 +5,7 @@ import time
 from pathlib import Path
 from datetime import datetime
 from flask import Blueprint, request, jsonify
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Union
 from jupyter_client.manager import KernelManager, KernelClient
 from queue import Empty
 import pandas as pd
@@ -44,10 +44,15 @@ def check_keywords_in_text(student_output: str, keywords_str: str, threshold: fl
         missing = [kw for kw in keywords if kw not in student_output_lower]
         return False, f"Failed. Missing keywords: {missing}"
 
-def compare_csvs(student_path: Path, solution_path: Path, key_columns=None, threshold: float = 0.9) -> Tuple[bool, float]:
+def compare_csvs(student_path: Union[Path, str], solution_path: Union[Path, str], key_columns=None, threshold: float = 0.9) -> Tuple[bool, float]:
     try:
-        if not student_path.exists(): return False, 0.0
-        if not solution_path.exists(): print(f"ERROR: Solution file missing at {solution_path}"); return False, 0.0
+        student_path, solution_path = Path(student_path), Path(solution_path)
+        if not student_path.exists():
+            print(f"ERROR: Student submission file missing at {student_path}")
+            return False, 0.0
+        if not solution_path.exists():
+            print(f"ERROR: Solution file missing at {solution_path}")
+            return False, 0.0
         df_student = pd.read_csv(student_path)
         df_solution = pd.read_csv(solution_path)
         if key_columns and len(key_columns) == 2:
@@ -119,10 +124,7 @@ def validate_cell():
     _km, kc = USER_KERNELS[session_id]
 
     try:
-        # --- THIS IS THE CORRECTED LINE ---
-        # It now uses the universal nested path for ALL subjects, fixing the crash.
         q_path = QUESTIONS_BASE_PATH / subject / f"level{level}" / "questions.json"
-
         with open(q_path, 'r', encoding='utf-8') as f: all_q = json.load(f)
         q_data = next((q for q in all_q if q['id'] == q_id), None)
         if not q_data: return jsonify({'error': f'Question with ID {q_id} not found.'}), 404
@@ -184,6 +186,57 @@ def validate_cell():
         except Exception as e:
             print(f"CRITICAL ML VALIDATION ERROR: {e}"); test_results.append(False)
     
+    elif subject == 'Speech Recognition':
+        task_type = part_data.get("type")
+        if task_type == "csv_similarity":
+            print(f"--- Starting Speech Recognition (CSV) Validation for Part: {p_id} ---")
+            
+            username = data.get("username", "default_student")
+            student_dir = USER_GENERATED_PATH / username
+            student_dir.mkdir(parents=True, exist_ok=True)
+            
+            solution_files = part_data.get("solution_file")
+            modified_code = code
+
+            # This block modifies the student's code to ensure output files
+            # are saved to their specific user_generated directory.
+            if isinstance(solution_files, list):
+                for sol_path_str in solution_files:
+                    filename = Path(sol_path_str).name
+                    full_student_path = student_dir / filename
+                    modified_code = modified_code.replace(f"'{filename}'", f"r'{full_student_path.as_posix()}'").replace(f"\"{filename}\"", f"r'{full_student_path.as_posix()}'")
+            elif isinstance(solution_files, str):
+                filename = Path(solution_files).name
+                full_student_path = student_dir / filename
+                modified_code = modified_code.replace(f"'{filename}'", f"r'{full_student_path.as_posix()}'").replace(f"\"{filename}\"", f"r'{full_student_path.as_posix()}'")
+
+            # Run the student's modified code
+            _stdout, stderr = run_code_on_kernel(kc, modified_code)
+            
+            if stderr:
+                print(f"  - ERROR: Student code failed to execute.\n{stderr}")
+                test_results.append(False)
+            else:
+                if isinstance(solution_files, list):
+                    all_files_passed = True
+                    for sol_path_str in solution_files:
+                        sol_path = Path(sol_path_str)
+                        student_file_path = student_dir / sol_path.name
+                        passed, score = compare_csvs(student_file_path, sol_path)
+                        print(f"  - Comparing '{student_file_path.name}': {'PASSED' if passed else 'FAILED'} (Score: {score:.2f})")
+                        if not passed: all_files_passed = False
+                    test_results.append(all_files_passed)
+                elif isinstance(solution_files, str):
+                    sol_path = Path(solution_files)
+                    student_file_path = student_dir / sol_path.name
+                    passed, score = compare_csvs(student_file_path, sol_path)
+                    print(f"  - Comparing '{student_file_path.name}': {'PASSED' if passed else 'FAILED'} (Score: {score:.2f})")
+                    test_results.append(passed)
+                else:
+                    test_results.append(False)
+        else:
+            test_results.append(True)
+            
     else:
         return jsonify({'error': f"No validation logic defined for subject: '{subject}'"}), 400
 
@@ -205,8 +258,7 @@ def run_cell():
 def submit_answers():
     data = request.get_json()
     session_id, username, subject, level = data.get('sessionId'), data.get('username'), data.get('subject'), data.get('level')
-    answers = data.get('answers', [])
-    all_passed = all(ans.get('passed', False) for ans in answers) if answers else False
+    answers, all_passed = data.get('answers', []), all(ans.get('passed', False) for ans in data.get('answers', []))
     status = 'passed' if all_passed else 'failed'
     submission = { 'subject': subject, 'level': f"level{level}", 'status': status, 'timestamp': datetime.now().isoformat(), 'answers': answers }
     user_submission_file = SUBMISSIONS_PATH / f"{username}.json"
