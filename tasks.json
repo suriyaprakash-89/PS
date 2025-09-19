@@ -17,7 +17,7 @@
   },
   {
     "id": "2",
-    "title": "You are working as a signal processing engineer for a voice biometrics startup. One of your responsibilities is to reduce spectral leakage before performing frequency analysis. You\u2019ve been asked to apply a Hamming window to each frame of a given audio file and analyze its effect on the signal.",
+    "title": "You are working as a signal processing engineer for a voice biometrics startup. One of your responsibilities is to reduce spectral leakage before performing frequency analysis. You’ve been asked to apply a Hamming window to each frame of a given audio file and analyze its effect on the signal.",
     "description": "Write a Python script to process the audio file Audio48.wav. Your program must:\n1.        Load the .wav file and divide it into 25ms frames with 10ms overlap.\n2.        Apply a Hamming window to each frame using scipy.signal.windows.hamming().\n3.        Export both raw and windowed frames into a file named windowed_output.csv.\n4.        Display the first 10 frames (raw vs. windowed) for comparison.\n.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio48"
@@ -33,7 +33,7 @@
   },
   {
     "id": "3",
-    "title": "You are part of a speech analytics team that\u2019s optimizing signal preprocessing before FFT. The goal is to identify which windowing function\u2014Hanning or Hamming\u2014better minimizes spectral leakage in voiced speech frames. Your task is to extract a frame from an audio file and compare both windowing effects visually and numerically.",
+    "title": "You are part of a speech analytics team that’s optimizing signal preprocessing before FFT. The goal is to identify which windowing function—Hanning or Hamming—better minimizes spectral leakage in voiced speech frames. Your task is to extract a frame from an audio file and compare both windowing effects visually and numerically.",
     "description": "Write a Python script to process the file Audio48.wav. Your program must:\n1.        Load the .wav file at a sampling rate of 16 kHz and extract the first 25 ms frame of audio.\n2.        Apply both Hanning and Hamming windows to that frame.\n3.        Plot a comparison graph showing:\no        The original raw frame,\no        The Hanning-windowed frame,\no        The Hamming-windowed frame,\nall in a single plot with labels, legends, and grid.\n4.        Save the frame samples (raw, Hanning-windowed, Hamming-windowed) into a CSV file named window_compare_output.csv, with columns:\no        Raw_Frame\no        Hanning_Windowed\no        Hamming_Windowed",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio48"
@@ -49,8 +49,8 @@
   },
   {
     "id": "4",
-    "title": "You\u2019re contributing to a speech preprocessing library for embedded systems that avoids using external signal libraries. You need to implement a Hamming window manually using its mathematical formula instead of using any built-in function.",
-    "description": "Write a Python script to process the file Audio47.wav. Your program must:\n1.        Load the first 25ms frame from the .wav file using librosa.\n2.        Manually compute the Hamming window using this formula.\n\n\n \nwhere N is the frame length and 0\u2264n<N\n3.        Apply the computed window weights to the frame.\n4.        Save both the original frame and the windowed frame into a CSV file named manual_hamming_output.csv.",
+    "title": "You’re contributing to a speech preprocessing library for embedded systems that avoids using external signal libraries. You need to implement a Hamming window manually using its mathematical formula instead of using any built-in function.",
+    "description": "Write a Python script to process the file Audio47.wav. Your program must:\n1.        Load the first 25ms frame from the .wav file using librosa.\n2.        Manually compute the Hamming window using this formula.\n\n\n \nwhere N is the frame length and 0≤n<N\n3.        Apply the computed window weights to the frame.\n4.        Save both the original frame and the windowed frame into a CSV file named manual_hamming_output.csv.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio47"
     },
@@ -58,7 +58,7 @@
       {
         "part_id": "4",
         "type": "csv_similarity",
-        "description": "Write a Python script to process the file Audio47.wav. Your program must:\n1.        Load the first 25ms frame from the .wav file using librosa.\n2.        Manually compute the Hamming window using this formula.\n\n\n \nwhere N is the frame length and 0\u2264n<N\n3.        Apply the computed window weights to the frame.\n4.        Save both the original frame and the windowed frame into a CSV file named manual_hamming_output.csv.",
+        "description": "Write a Python script to process the file Audio47.wav. Your program must:\n1.        Load the first 25ms frame from the .wav file using librosa.\n2.        Manually compute the Hamming window using this formula.\n\n\n \nwhere N is the frame length and 0≤n<N\n3.        Apply the computed window weights to the frame.\n4.        Save both the original frame and the windowed frame into a CSV file named manual_hamming_output.csv.",
         "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/solution/manual_hamming_output.csv"
       }
     ]
@@ -81,7 +81,7 @@
   },
   {
     "id": "6",
-    "title": "You are building a visualization dashboard for analyzing speech signals in the frequency domain. The system is required to show how frequency components change over time. You\u2019ve been asked to apply FFT to consecutive frames of a speech signal and visualize their power spectra.",
+    "title": "You are building a visualization dashboard for analyzing speech signals in the frequency domain. The system is required to show how frequency components change over time. You’ve been asked to apply FFT to consecutive frames of a speech signal and visualize their power spectra.",
     "description": "Write a Python script to process the file Audio45.wav. Your program must:\n1.\tLoad the .wav file and divide it into 25ms frames with 10ms overlap.\n2.\tSelect any 3 consecutive frames from the middle of the signal.\n3.\tApply FFT on each frame and compute their magnitude spectrum.\n4.\tPrint the magnitude spectra of the 3 frames .",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio45"
@@ -113,7 +113,7 @@
   },
   {
     "id": "8",
-    "title": "A speech enhancement engineer wants to analyze how increasing the number of FFT points through zero-padding affects spectral detail. You\u2019ve been asked to demonstrate this using a fixed audio frame but with different FFT sizes: 256, 512, and 1024.",
+    "title": "A speech enhancement engineer wants to analyze how increasing the number of FFT points through zero-padding affects spectral detail. You’ve been asked to demonstrate this using a fixed audio frame but with different FFT sizes: 256, 512, and 1024.",
     "description": "Write a Python script to process the file Audio43.wav. Your program must:\n1.        Load the audio and extract a 25 ms frame from the center of the signal (assume sampling rate = 16,000 Hz).\n2.        Apply a Hamming window to the extracted frame.\n3.        Perform FFT with zero-padding to lengths 256, 512, and 1024.\n4.        Instead of plotting, compute and print the magnitude spectrum values for each FFT size.\n5.        Save the results into a CSV file named fft_comparison_output.csv, with separate columns for the FFT sizes (256, 512, 1024) so that their resolution can be compared numerically.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio43"
@@ -146,7 +146,7 @@
   {
     "id": "10",
     "title": ") A speech researcher wants to compare time-frequency patterns in raw audio and examine how they align with Mel-scale perception. You are asked to generate a spectrogram and apply Mel filter banks to simulate how humans perceive sound frequency.",
-    "description": "Write a Python script to process the file Audio41.wav with the following tasks:\n1.        Load the audio signal at a sampling rate of 16 kHz.\n2.        Generate a spectrogram (power spectrum) using Short-Time Fourier Transform (STFT).\n3.        Convert each frame\u2019s power spectrum into the Mel scale representation using librosa.filters.mel().\n4.        Save the Mel-transformed power spectrum into a CSV file named mel_spectrogram_output.csv, where rows represent time frames and columns represent Mel frequency bins.\n5.        Print the first few rows of the Mel spectrogram as output for verification.",
+    "description": "Write a Python script to process the file Audio41.wav with the following tasks:\n1.        Load the audio signal at a sampling rate of 16 kHz.\n2.        Generate a spectrogram (power spectrum) using Short-Time Fourier Transform (STFT).\n3.        Convert each frame’s power spectrum into the Mel scale representation using librosa.filters.mel().\n4.        Save the Mel-transformed power spectrum into a CSV file named mel_spectrogram_output.csv, where rows represent time frames and columns represent Mel frequency bins.\n5.        Print the first few rows of the Mel spectrogram as output for verification.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio41"
     },
@@ -154,7 +154,7 @@
       {
         "part_id": "10",
         "type": "csv_similarity",
-        "description": "Write a Python script to process the file Audio41.wav with the following tasks:\n1.        Load the audio signal at a sampling rate of 16 kHz.\n2.        Generate a spectrogram (power spectrum) using Short-Time Fourier Transform (STFT).\n3.        Convert each frame\u2019s power spectrum into the Mel scale representation using librosa.filters.mel().\n4.        Save the Mel-transformed power spectrum into a CSV file named mel_spectrogram_output.csv, where rows represent time frames and columns represent Mel frequency bins.\n5.        Print the first few rows of the Mel spectrogram as output for verification.",
+        "description": "Write a Python script to process the file Audio41.wav with the following tasks:\n1.        Load the audio signal at a sampling rate of 16 kHz.\n2.        Generate a spectrogram (power spectrum) using Short-Time Fourier Transform (STFT).\n3.        Convert each frame’s power spectrum into the Mel scale representation using librosa.filters.mel().\n4.        Save the Mel-transformed power spectrum into a CSV file named mel_spectrogram_output.csv, where rows represent time frames and columns represent Mel frequency bins.\n5.        Print the first few rows of the Mel spectrogram as output for verification.",
         "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/solution/mel_spectrogram_output.csv"
       }
     ]
@@ -177,7 +177,7 @@
   },
   {
     "id": "12",
-    "title": "Two speakers recorded the same spoken word (e.g., \u201chello\u201d) in different voices. Your goal is to analyze how Mel spectrograms vary by speaker, specifically in terms of pitch and energy concentration across Mel bands.",
+    "title": "Two speakers recorded the same spoken word (e.g., “hello”) in different voices. Your goal is to analyze how Mel spectrograms vary by speaker, specifically in terms of pitch and energy concentration across Mel bands.",
     "description": "Write a Python script to process the files Audio39.wav and Audio38.wav with the following tasks:\n1.        Load both audio files at 16 kHz and trim them to the same duration (pad the shorter one if needed).\n2.        Compute the Mel spectrograms for both signals using librosa.feature.melspectrogram() (default: 40 Mel bands).\n3.        Convert the Mel spectrograms to log scale (dB) using librosa.power_to_db().\n4.        Compute the difference matrix between the two log Mel-spectrograms.\n5.        Save the difference matrix as mel_diff_output.csv.\n6.        Print a preview (first few rows and columns) of the difference matrix to the console.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio39"
@@ -193,7 +193,7 @@
   },
   {
     "id": "13",
-    "title": ") A speech processing team wants to study the perceived brightness of an audio signal over time. You\u2019ve been asked to compute the spectral centroid, a key feature for measuring where most energy is concentrated in the frequency spectrum for each short-time frame.",
+    "title": ") A speech processing team wants to study the perceived brightness of an audio signal over time. You’ve been asked to compute the spectral centroid, a key feature for measuring where most energy is concentrated in the frequency spectrum for each short-time frame.",
     "description": "Write a Python script to process the file Audio38.wav. Your program must:\n1.        Load the audio file using a sampling rate of 16 kHz.\n2.        Compute the Mel spectrogram using librosa.feature.melspectrogram().\n3.        Calculate the spectral centroid per frame using librosa.feature.spectral_centroid().\n4.        Save the spectral centroid values to a CSV file named spectral_centroid_output.csv and print the values instead of plotting.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio38"
@@ -241,8 +241,8 @@
   },
   {
     "id": "16",
-    "title": "You\u2019re building a robust speech recognition system and want to incorporate temporal dynamics. In addition to the static MFCCs, you\u2019ll use delta (1st derivative) and delta-delta (2nd derivative) features to capture how speech features change over time",
-    "description": "Write a Python script to process the audio file Audio36.wav. Your program must:\n\n1.        Load the audio file and compute 13 MFCCs using librosa.feature.mfcc().\n2.        Use librosa.feature.delta() to compute delta and delta-delta features from the MFCCs.\n3.        Concatenate the MFCCs, delta, and delta-delta features to form a final matrix of shape N \u00d7 39 (where N is the number of frames).\n4.        Export the result to a CSV file named mfcc_delta_output.csv.",
+    "title": "You’re building a robust speech recognition system and want to incorporate temporal dynamics. In addition to the static MFCCs, you’ll use delta (1st derivative) and delta-delta (2nd derivative) features to capture how speech features change over time",
+    "description": "Write a Python script to process the audio file Audio36.wav. Your program must:\n\n1.        Load the audio file and compute 13 MFCCs using librosa.feature.mfcc().\n2.        Use librosa.feature.delta() to compute delta and delta-delta features from the MFCCs.\n3.        Concatenate the MFCCs, delta, and delta-delta features to form a final matrix of shape N × 39 (where N is the number of frames).\n4.        Export the result to a CSV file named mfcc_delta_output.csv.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio36"
     },
@@ -250,14 +250,14 @@
       {
         "part_id": "16",
         "type": "csv_similarity",
-        "description": "Write a Python script to process the audio file Audio36.wav. Your program must:\n\n1.        Load the audio file and compute 13 MFCCs using librosa.feature.mfcc().\n2.        Use librosa.feature.delta() to compute delta and delta-delta features from the MFCCs.\n3.        Concatenate the MFCCs, delta, and delta-delta features to form a final matrix of shape N \u00d7 39 (where N is the number of frames).\n4.        Export the result to a CSV file named mfcc_delta_output.csv.",
+        "description": "Write a Python script to process the audio file Audio36.wav. Your program must:\n\n1.        Load the audio file and compute 13 MFCCs using librosa.feature.mfcc().\n2.        Use librosa.feature.delta() to compute delta and delta-delta features from the MFCCs.\n3.        Concatenate the MFCCs, delta, and delta-delta features to form a final matrix of shape N × 39 (where N is the number of frames).\n4.        Export the result to a CSV file named mfcc_delta_output.csv.",
         "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/solution/mfcc_delta_output.csv"
       }
     ]
   },
   {
     "id": "17",
-    "title": "You\u2019re preparing a feature set for a deep learning speech recognition model. Neural networks perform better with normalized input, so you'll apply z-score normalization to the extracted MFCCs to ensure features have zero mean and unit variance.",
+    "title": "You’re preparing a feature set for a deep learning speech recognition model. Neural networks perform better with normalized input, so you'll apply z-score normalization to the extracted MFCCs to ensure features have zero mean and unit variance.",
     "description": "Write a Python script to process the audio file Audio35.wav. Your program must:\n\n1.        Extract 13 MFCC coefficients using librosa.feature.mfcc().\n2.        Apply Z-score normalization using StandardScaler() from sklearn.preprocessing.\n3.        Ensure the output matrix has approximately mean = 0 and standard deviation = 1.\n4.        Save the normalized matrix to mfcc_zscore_output.csv.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio35"
@@ -308,8 +308,8 @@
   },
   {
     "id": "20",
-    "title": "You are enhancing your speech feature set by including spectral contrast, which describes the relative energy difference between peaks and valleys in the frequency spectrum\u2014helpful in capturing timbre information alongside MFCCs.",
-    "description": "Write a Python script to process the audio file Audio33.wav. Your program must:\n\n1.        Compute 13 MFCC coefficients using librosa.feature.mfcc().\n2.        Compute spectral contrast using librosa.feature.spectral_contrast().\n3.        Apply Z-score normalization on both MFCC and spectral contrast features using StandardScaler().\n4.        Concatenate both feature matrices (frames \u00d7 (13 + contrast_bins)) and export to mfcc_contrast_output.csv.",
+    "title": "You are enhancing your speech feature set by including spectral contrast, which describes the relative energy difference between peaks and valleys in the frequency spectrum—helpful in capturing timbre information alongside MFCCs.",
+    "description": "Write a Python script to process the audio file Audio33.wav. Your program must:\n\n1.        Compute 13 MFCC coefficients using librosa.feature.mfcc().\n2.        Compute spectral contrast using librosa.feature.spectral_contrast().\n3.        Apply Z-score normalization on both MFCC and spectral contrast features using StandardScaler().\n4.        Concatenate both feature matrices (frames × (13 + contrast_bins)) and export to mfcc_contrast_output.csv.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio33"
     },
@@ -317,7 +317,7 @@
       {
         "part_id": "20",
         "type": "csv_similarity",
-        "description": "Write a Python script to process the audio file Audio33.wav. Your program must:\n\n1.        Compute 13 MFCC coefficients using librosa.feature.mfcc().\n2.        Compute spectral contrast using librosa.feature.spectral_contrast().\n3.        Apply Z-score normalization on both MFCC and spectral contrast features using StandardScaler().\n4.        Concatenate both feature matrices (frames \u00d7 (13 + contrast_bins)) and export to mfcc_contrast_output.csv.",
+        "description": "Write a Python script to process the audio file Audio33.wav. Your program must:\n\n1.        Compute 13 MFCC coefficients using librosa.feature.mfcc().\n2.        Compute spectral contrast using librosa.feature.spectral_contrast().\n3.        Apply Z-score normalization on both MFCC and spectral contrast features using StandardScaler().\n4.        Concatenate both feature matrices (frames × (13 + contrast_bins)) and export to mfcc_contrast_output.csv.",
         "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/solution/mfcc_contrast_output.csv"
       }
     ]
@@ -341,7 +341,7 @@
   {
     "id": "22",
     "title": "You are designing an emotion classification system, which performs better with diverse speech features. To capture both short-term and tonal variations, you aim to combine MFCCs, delta features, and chroma features into a unified representation.",
-    "description": "Write a Python script to process the audio file Audio35.wav. Your program must:\n\n1.        Extract 13 MFCCs, their delta coefficients, and 12-bin chroma features.\n2.        Normalize each feature set individually using Z-score normalization.\n3.        Concatenate the normalized features into a single frame-wise vector (shape: N \u00d7 (13 + 13 + 12)).\n4.        Save the final feature matrix to full_feature_vector.csv.",
+    "description": "Write a Python script to process the audio file Audio35.wav. Your program must:\n\n1.        Extract 13 MFCCs, their delta coefficients, and 12-bin chroma features.\n2.        Normalize each feature set individually using Z-score normalization.\n3.        Concatenate the normalized features into a single frame-wise vector (shape: N × (13 + 13 + 12)).\n4.        Save the final feature matrix to full_feature_vector.csv.",
     "datasets": {
       "input_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/input/Audio35"
     },
@@ -349,7 +349,7 @@
       {
         "part_id": "22",
         "type": "csv_similarity",
-        "description": "Write a Python script to process the audio file Audio35.wav. Your program must:\n\n1.        Extract 13 MFCCs, their delta coefficients, and 12-bin chroma features.\n2.        Normalize each feature set individually using Z-score normalization.\n3.        Concatenate the normalized features into a single frame-wise vector (shape: N \u00d7 (13 + 13 + 12)).\n4.        Save the final feature matrix to full_feature_vector.csv.",
+        "description": "Write a Python script to process the audio file Audio35.wav. Your program must:\n\n1.        Extract 13 MFCCs, their delta coefficients, and 12-bin chroma features.\n2.        Normalize each feature set individually using Z-score normalization.\n3.        Concatenate the normalized features into a single frame-wise vector (shape: N × (13 + 13 + 12)).\n4.        Save the final feature matrix to full_feature_vector.csv.",
         "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/Speech-Recognition/solution/full_feature_vector.csv"
       }
     ]

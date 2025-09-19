@@ -1,29 +1,38 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 
-// Import your specific exam page components
-import ML_ExamPage from './ML_ExamPage'; // The original ML exam page
-import DS_ExamPage from './DS_ExamPage'; // The new Data Science exam page
+// Import all your specific exam page components
+import ML_ExamPage from './ML_ExamPage';
+import DS_ExamPage from './DS_ExamPage';
+import SpeechRecognition_ExamPage from './SpeechRecognition_ExamPage'; // Ensure this path is correct
 
 const ExamPageDispatcher = () => {
-  // Get the 'subject' from the URL (e.g., 'ml', 'ds')
   const { subject } = useParams();
 
-  // Render the correct component based on the subject
-  switch (subject?.toLowerCase()) {
+  // --- THIS IS THE FIX ---
+  // We normalize the subject key to make the matching reliable.
+  // This removes all spaces and converts to lowercase.
+  // "Speech Recognition" becomes "speechrecognition"
+  const normalizedSubject = subject?.replace(/\s+/g, '').toLowerCase();
+
+  // Use a switch statement on the NORMALIZED subject key
+  switch (normalizedSubject) {
     case 'ml':
       return <ML_ExamPage />;
     
     case 'ds':
       return <DS_ExamPage />;
 
-    // You can add more subjects here in the future
-    // case 'web':
-    //   return <WebExamPage />;
+    case 'speechrecognition': // <-- Match the new, normalized key
+      return <SpeechRecognition_ExamPage />;
 
-    // If the subject is not recognized, redirect to the dashboard
+    // You can add cases for your other subjects here using their normalized keys
+    // Example: case 'generativeai': return <GenAI_ExamPage />;
+    // Example: case 'deepllearning': return <DL_ExamPage />;
+
     default:
-      console.error(`No exam component found for subject: ${subject}`);
+      // This log helps debug any future issues
+      console.error(`No exam component found for subject: "${subject}" (Normalized to: "${normalizedSubject}")`);
       return <Navigate to="/dashboard" />;
   }
 };
