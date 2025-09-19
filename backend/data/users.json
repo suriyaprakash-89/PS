@@ -1,0 +1,162 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "$2b$10$gXUvk0vqautGW8x9yjA3EebdMrdjcB8t/XQ2yOSvgx8yxUl95RJTu",
+      "role": "admin",
+      "progress": {
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked"
+        },
+        "Python Basics": {
+          "level1": "unlocked"
+        },
+        "Phone Software": {
+          "level1": "unlocked"
+        },
+        "C": {
+          "level1": "unlocked"
+        }
+      }
+    },
+    {
+      "username": "student1",
+      "password": "$2b$10$KNx1JsmoBvzUeZkmQQ3N4OBaThn2Nk8TLLsF.ooIHlcJnLZkTGSX.",
+      "role": "student",
+      "progress": {
+        "ds": {
+          "level1": "completed",
+          "level2": "completed",
+          "level3": "unlocked"
+        },
+        "ml": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked"
+        },
+        "NLP": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "LLM": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Generative AI": {
+          "level1": "unlocked"
+        },
+        "Deffusor": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked",
+          "level4": "locked"
+        },
+        "web_dev": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Python Basics": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Phone Software": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "C": {
+          "level1": "unlocked"
+        }
+      }
+    },
+    {
+      "username": "student2",
+      "password": "$2b$10$KNx1JsmoBvzUeZkmQQ3N4OBaThn2Nk8TLLsF.ooIHlcJnLZkTGSX.",
+      "role": "student",
+      "progress": {
+        "ds": {
+          "level1": "completed",
+          "level2": "completed",
+          "level3": "unlocked"
+        },
+        "dsa": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "ml": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "NLP": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked"
+        },
+        "Deep Learning": {
+          "level1": "unlocked",
+          "level2": "locked",
+          "level3": "locked"
+        },
+        "LLM": {
+          "level1": "completed",
+          "level2": "unlocked",
+          "level3": "locked"
+        },
+        "Speech Recognition": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "web_dev": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Sping Boot": {
+          "level1": "unlocked"
+        },
+        "final_test_subject": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Python Basics": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "Phone Software": {
+          "level1": "unlocked",
+          "level2": "locked"
+        },
+        "C": {
+          "level1": "unlocked"
+        }
+      }
+    },
+    {
+      "username": "suriya",
+      "password": "$2b$12$CrXCACGEQD0aU7dTy0Odv.CXH80nKuEGkIxlw0ApsNEJQS40qGpRy",
+      "role": "admin",
+      "progress": {}
+    }
+  ]
+}
