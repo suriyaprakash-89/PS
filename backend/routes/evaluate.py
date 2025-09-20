@@ -222,6 +222,12 @@ def validate_cell():
                     for sol_path_str in solution_files:
                         sol_path = Path(sol_path_str)
                         student_file_path = student_dir / sol_path.name
+
+                        # --- ADD THESE TWO LINES ---
+                        print(f"🐞 DEBUG: Comparing Student File -> {student_file_path.resolve()}")
+                        print(f"🐞 DEBUG: With Solution File -> {sol_path.resolve()}")
+                        # -------------------------
+
                         passed, score = compare_csvs(student_file_path, sol_path)
                         print(f"  - Comparing '{student_file_path.name}': {'PASSED' if passed else 'FAILED'} (Score: {score:.2f})")
                         if not passed: all_files_passed = False
@@ -229,6 +235,12 @@ def validate_cell():
                 elif isinstance(solution_files, str):
                     sol_path = Path(solution_files)
                     student_file_path = student_dir / sol_path.name
+
+                    # --- ADD THESE TWO LINES ---
+                    print(f"🐞 DEBUG: Comparing Student File -> {student_file_path.resolve()}")
+                    print(f"🐞 DEBUG: With Solution File -> {sol_path.resolve()}")
+                    # -------------------------
+
                     passed, score = compare_csvs(student_file_path, sol_path)
                     print(f"  - Comparing '{student_file_path.name}': {'PASSED' if passed else 'FAILED'} (Score: {score:.2f})")
                     test_results.append(passed)
