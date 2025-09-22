@@ -584,7 +584,7 @@ const ML_ExamPage = () => {
       if (!res.ok) throw new Error(`Server error: ${res.status}`);
       const data = await res.json();
       setCellResults((prev) => ({ ...prev, [partId]: data }));
-      const allPassed = data.test_results?.every((p) => p === true);
+      const allPassed = data.test_results && data.test_results.length > 0 && data.test_results.every(p => p === true);
       setValidationStatus((prev) => ({ ...prev, [partId]: allPassed }));
     } catch (error) {
       console.error("Submission Error:", error);

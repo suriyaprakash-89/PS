@@ -158,5 +158,43 @@
         "passed": true
       }
     ]
+  },
+  {
+    "subject": "ds",
+    "level": "level1",
+    "status": "passed",
+    "timestamp": "2025-09-22T16:14:19.733114",
+    "answers": [
+      {
+        "questionId": "q8",
+        "partId": null,
+        "code": "import numpy as np\n\n# Read space-separated numbers from input\nnumbers = input().split()\n\n# Convert to numpy array of integers\narr = np.array(numbers, dtype=int)\n\n# Print the sum of all numbers\nprint(arr.sum())\n",
+        "passed": true
+      },
+      {
+        "questionId": "q5",
+        "partId": null,
+        "code": "import numpy as np\n\n# Read space-separated numbers from input\nnumbers = input().split()\n\n# Convert to numpy array of integers\narr = np.array(numbers, dtype=int)\n\n# Print the biggest number\nprint(arr.max())\n",
+        "passed": true
+      },
+      {
+        "questionId": "q7",
+        "partId": null,
+        "code": "import numpy as np\n\n# Read space-separated numbers from input\nnumbers = input().split()\n\n# Convert to numpy array of integers\narr = np.array(numbers, dtype=int)\n\n# Print the first element\nprint(arr[0])\n",
+        "passed": true
+      },
+      {
+        "questionId": "q3",
+        "partId": null,
+        "code": "import numpy as np\n\n# Read space-separated numbers and create numpy array\narr = np.array(input().split(), dtype=int)\n\n# Read single number to add\nnum = int(input())\n\n# Add the number to each element\narr += num\n\n# Print array in desired format\nprint(\"[\" + \" \".join(map(str, arr)) + \"]\")\n",
+        "passed": true
+      },
+      {
+        "questionId": "q10",
+        "partId": null,
+        "code": "import numpy as np\n\n# Read space-separated numbers and create numpy array\narr = np.array(input().split(), dtype=int)\n\n# Print the size of the array\nprint(arr.size)\n",
+        "passed": true
+      }
+    ]
   }
 ]

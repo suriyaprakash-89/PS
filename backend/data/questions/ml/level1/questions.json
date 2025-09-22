@@ -4,8 +4,8 @@
     "title": "Predict the house price.",
     "description": "A real estate company wants to predict house prices based on historical data. You are given a dataset containing features like number of rooms, area (in square feet), number of bathrooms, location rating, and age of the house.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/test.csv"
     },
     "parts": [
       {
@@ -28,7 +28,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Prediction\n\nUsing your trained model, predict the prices for the test dataset and save the final predictions to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/solution.csv",
         "key_columns": ["Id", "SalePrice"],
         "similarity_threshold": 0.9
       }
@@ -39,8 +39,8 @@
     "title": "Predict Hourly Bike Rental Demand",
     "description": "A city bike rental company wants to predict the number of bikes rented in a given hour based on factors like temperature, humidity, and time of day. Your task is to build a Polynomial Regression model to predict hourly bike rental demand.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/test.csv"
     },
     "parts": [
       {
@@ -63,7 +63,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Prediction & Analysis\n\nUsing your trained polynomial model, predict the number of bike rentals for the test dataset and save the final output to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/solution.csv",
         "key_columns": ["datetime", "count"],
         "similarity_threshold": 0.9
       },
@@ -81,8 +81,8 @@
     "title": "Build a ridge regression model to predict house prices",
     "description": "You are working as a data scientist for a real estate company. Your goal is to build a regression model to predict house prices using various features. You will use Ridge Regression to improve model stability and performance.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/test.csv"
     },
     "parts": [
       {
@@ -104,7 +104,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Training & Final Prediction\n\nTrain a Ridge Regression model with hyperparameter tuning. Use your final, tuned model to predict on the test set and save the results to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/solution.csv",
         "key_columns": ["Id", "SalePrice"],
         "similarity_threshold": 0.9
       },
@@ -123,8 +123,8 @@
     "title": "Build a predictive model to estimate the progression of diabetes",
     "description": "You are tasked with building a predictive model to estimate the progression of diabetes one year after baseline. Use Lasso Regression to perform both regression and feature selection.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/diabetes/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/diabetes/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/diabetes/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/diabetes/test.csv"
     },
     "parts": [
       {
@@ -147,7 +147,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Training & Evaluation\n\nTrain a Lasso Regression model. Predict on the test set and save the results to 'submission.csv' for validation.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/diabetes/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/diabetes/solution.csv",
         "key_columns": ["ID", "target"],
         "similarity_threshold": 0.9
       },
@@ -166,8 +166,8 @@
     "title": "Predict house price using tree-based models",
     "description": "You are provided with a dataset containing various features of houses and their corresponding sale prices. Your task is to build regression models using tree-based methods—specifically Decision Tree Regression and Random Forest Regression—to predict house prices. Analyze and compare their performances.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/test.csv"
     },
     "parts": [
       {
@@ -189,7 +189,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Performance\n\nTrain the tuned Random Forest model to predict the sale prices on the test set. Save the results to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/solution.csv",
         "key_columns": ["Id", "SalePrice"],
         "similarity_threshold": 0.9
       },
@@ -208,8 +208,8 @@
     "title": "Build a Random Forest model to predict bike rentals",
     "description": "You are provided with a dataset that records hourly bike rental counts along with weather and seasonal information. Your task is to build a Random Forest Regression model to predict the number of bike rentals ('count').",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/test.csv"
     },
     "parts": [
       {
@@ -231,7 +231,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Training & Predictions\n\nTrain the best Random Forest model from the previous step, use it to make predictions on the test dataset, and save the results to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/bike/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/bike/solution.csv",
         "key_columns": ["datetime", "count"],
         "similarity_threshold": 0.9
       },
@@ -250,8 +250,8 @@
     "title": "Build a Gradient Boosting model to predict house prices",
     "description": "You are given a dataset with various features describing houses. Your task is to build a Gradient Boosting Regression model to predict house sale prices. You need to preprocess the data, tune the hyperparameters, and evaluate the model.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/test.csv"
     },
     "parts": [
       {
@@ -273,7 +273,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Training & Predictions\n\nTrain the tuned Gradient Boosting model, use it to make predictions on the test dataset, and save the results to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/house-prices/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/house-prices/solution.csv",
         "key_columns": ["Id", "SalePrice"],
         "similarity_threshold": 0.9
       },
@@ -292,8 +292,8 @@
     "title": "Build an Extra Trees Regressor model to predict car prices",
     "description": "You are provided with a dataset containing features of used cars. Your task is to build an Extra Trees Regressor model to predict the selling price. You need to preprocess the data, tune hyperparameters, and evaluate the model.",
     "datasets": {
-      "train": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/realistic_car/train.csv",
-      "test": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/realistic_car/test.csv"
+      "train": "/home/student/Desktop/PS/backend/data/datasets/ml/realistic_car/train.csv",
+      "test": "/home/student/Desktop/PS/backend/data/datasets/ml/realistic_car/test.csv"
     },
     "parts": [
       {
@@ -315,7 +315,7 @@
         "type": "csv_similarity",
         "description": "Part 3: Model Training & Predictions\n\nTrain the tuned Extra Trees model and use it to make predictions on the test set. Save the results to 'submission.csv'.",
         "placeholder_filename": "submission.csv",
-        "solution_file": "/home/student/Desktop/PS_SOFTWARE/PS/backend/data/datasets/ml/realistic_car/solution.csv",
+        "solution_file": "/home/student/Desktop/PS/backend/data/datasets/ml/realistic_car/solution.csv",
         "key_columns": ["ID", "selling_price"],
         "similarity_threshold": 0.9
       },
